@@ -1,0 +1,21 @@
+ckyc_number,bank_name,cif_number,account_number,branch_name,account_type
+12345678901234,State Bank of India,001,1001,Main Branch,Savings
+12345678901234,HDFC Bank,002,1002,Branch Two,Current
+56789012345678,ICICI Bank,003,1003,Branch Three,Savings
+78901234567890,Axis Bank,004,1004,Branch Four,Current
+34567890123456,Yes Bank,005,1005,Branch Five,Savings
+45678901234567,Bank of Baroda,006,1006,Branch Six,Current
+67890123456789,Punjab National Bank,007,1007,Branch Seven,Savings
+89012345678901,Central Bank of India,008,1008,Branch Eight,Current
+12345678901235,Union Bank of India,009,1009,Branch Nine,Savings
+56789012345679,IDFC FIRST Bank,010,1010,Branch Ten,Current
+78901234567891,Canara Bank,011,1011,Branch Eleven,Savings
+34567890123457,Indian Bank,012,1012,Branch Twelve,Current
+45678901234568,Bank of India,013,1013,Branch Thirteen,Savings
+67890123456790,Standard Chartered Bank,014,1014,Branch Fourteen,Current
+89012345678902,Kotak Mahindra Bank,015,1015,Branch Fifteen,Savings
+12345678901236,Deutsche Bank,016,1016,Branch Sixteen,Current
+56789012345680,South Indian Bank,017,1017,Branch Seventeen,Savings
+78901234567892,UBI,018,1018,Branch Eighteen,Current
+34567890123458,Federal Bank,019,1019,Branch Nineteen,Savings
+45678901234569,Oriental Bank of Commerce,020,1020,Branch Twenty,Current

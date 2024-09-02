@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Menu</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Account Menu for Account {{ account_number }}</h1>
+        <form method="POST">
+            <label for="option">Select an option:</label>
+            <select id="option" name="option" required>
+                <option value="all_transactions">View All Transactions</option>
+                <option value="deposit">View Deposits</option>
+                <option value="withdraw">View Withdrawals</option>
+                <option value="frequent_value">Frequent Transaction Amounts</option>
+                <option value="frequent_party">Frequent Transaction Parties</option>
+                <option value="money_laundering">Detect Suspicious Transactions</option>
+                <option value="filter_date">Filter Transactions by Date</option>
+                <option value="filter_amount">Filter Transactions by Amount</option>
+                <option value="export_report">Export Transactions Report</option>
+            </select>
+            <div id="filter_options"></div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('option').addEventListener('change', function() {
+            let filterOptions = document.getElementById('filter_options');
+            filterOptions.innerHTML = '';
+            if (this.value === 'filter_date') {
+                filterOptions.innerHTML = `
+                    <label for="start_date">Start Date:</label>
+                    <input type="date" id="start_date" name="start_date" required>
+                    <label for="end_date">End Date:</label>
+                    <input type="date" id="end_date" name="end_date" required>
+                `;
+            } else if (this.value === 'filter_amount') {
+                filterOptions.innerHTML = `
+                    <label for="min_amount">Minimum Amount:</label>
+                    <input type="number" id="min_amount" name="min_amount" required>
+                `;
+            } else if (this.value === 'export_report') {
+                filterOptions.innerHTML = `
+                    <label for="filename">Filename:</label>
+                    <input type="text" id="filename" name="filename" required>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+account_number,date,transaction_type,amount,transaction_party
+1001,2024-07-01,deposit,5000,Merchant A
+1001,2024-07-02,withdraw,2000,ATM
+1001,2024-07-06,withdraw,11000,ATM
+1002,2024-07-03,deposit,10000,Merchant B
+1002,2024-07-10,withdraw,3000,ATM
+1003,2024-07-04,deposit,15000,Merchant C
+1003,2024-07-05,withdraw,7000,ATM
+1003,2024-07-12,deposit,5000,Merchant D
+1004,2024-07-08,withdraw,2500,Merchant E
+1004,2024-07-15,deposit,8000,ATM
+1005,2024-07-09,deposit,12000,Merchant F
+1005,2024-07-11,withdraw,6000,ATM
+1005,2024-07-14,deposit,3000,Merchant G
+1006,2024-07-02,withdraw,1500,ATM
+1006,2024-07-07,deposit,4000,Merchant H
+1006,2024-07-13,withdraw,2500,Merchant I
+1007,2024-07-05,deposit,20000,Merchant J
+1007,2024-07-10,withdraw,5000,ATM
+1008,2024-07-08,withdraw,2000,Merchant K
+1008,2024-07-11,deposit,7000,ATM
+1008,2024-07-14,withdraw,3000,Merchant L
+1009,2024-07-03,deposit,8000,Merchant M
+1009,2024-07-09,withdraw,2000,ATM
+1009,2024-07-12,deposit,5000,Merchant N
+1010,2024-07-01,withdraw,2500,ATM
+1010,2024-07-06,deposit,10000,Merchant O
+1010,2024-07-15,withdraw,1500,ATM

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inter-Bank Transfers</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Inter-Bank Transfers</h1>
+        <table>
+            <tr>
+                <th>Account Number</th>
+                <th>Transaction Party</th>
+                <th>Total Amount</th>
+            </tr>
+            {% for (account_number, transaction_party), amount in transfers.items() %}
+            <tr>
+                <td>{{ account_number }}</td>
+                <td>{{ transaction_party }}</td>
+                <td>{{ amount }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

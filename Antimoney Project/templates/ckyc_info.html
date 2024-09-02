@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CKYC Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>CKYC Information</h1>
+        <h2>Customer Details</h2>
+        <table>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+            {% for col, value in customer_info.iloc[0].items() %}
+            <tr>
+                <td>{{ col }}</td>
+                <td>{{ value }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        
+        <h2>Customer Accounts</h2>
+        <ul>
+            {% for index, row in accounts.iterrows() %}
+            <li>
+                <a href="{{ url_for('account_menu', account_number=row['account_number']) }}">
+                    Account Number: {{ row['account_number'] }} - Bank: {{ row['bank_name'] }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+
+        <!-- Add button for inter-bank transfer -->
+        <h2>Inter-Bank Transfer</h2>
+        <form action="{{ url_for('inter_bank_transfers') }}" method="post">
+            <input type="hidden" name="ckyc_number" value="{{ customer_info.iloc[0]['ckyc_number'] }}">
+            <label for="start_date">Start Date:</label>
+            <input type="date" id="start_date" name="start_date" required>
+            <label for="end_date">End Date:</label>
+            <input type="date" id="end_date" name="end_date" required>
+            <button type="submit">Show Inter Bank Transfers</button>
+        </form>
+
+        <!-- Show transactions done by the entered CKYC number -->
+        <h2>Transactions</h2>
+        <ul>
+            {% for transaction in transactions %}
+            <li>Transaction ID: {{ transaction.id }} - Amount: {{ transaction.amount }} - Date: {{ transaction.date }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Transactions</h1>
+        
+        {% if transactions.shape[0] > 0 %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Account Number</th>
+                        <th>Date</th>
+                        <th>Transaction Type</th>
+                        <th>Amount</th>
+                        <th>Transaction Party</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in transactions.itertuples() %}
+                        <tr>
+                            <td>{{ row.account_number }}</td>
+                            <td>{{ row.date }}</td>
+                            <td>{{ row.transaction_type }}</td>
+                            <td>{{ row.amount }}</td>
+                            <td>{{ row.transaction_party }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No transactions found.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
